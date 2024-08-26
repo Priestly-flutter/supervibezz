@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "exhibit_categories",
+  "info": {
+    "singularName": "exhibit-category",
+    "pluralName": "exhibit-categories",
+    "displayName": "Exhibit-Category",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "exhibitions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::exhibition.exhibition",
+      "mappedBy": "exhibit_category"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "exhibitions",
+  "info": {
+    "singularName": "exhibition",
+    "pluralName": "exhibitions",
+    "displayName": "Exhibition",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "media": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "admin::user"
+    },
+    "isForsale": {
+      "type": "boolean"
+    },
+    "Price": {
+      "type": "decimal"
+    },
+    "Likes": {
+      "type": "integer"
+    },
+    "exhibit_category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::exhibit-category.exhibit-category",
+      "inversedBy": "exhibitions"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "purchase_records",
+  "info": {
+    "singularName": "purchase-record",
+    "pluralName": "purchase-records",
+    "displayName": "Purchase_Record"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "canonicalUrl": {
+      "type": "uid",
+      "required": true
+    },
+    "creative_Buyer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::creator.creator",
+      "inversedBy": "purchase_records"
+    },
+    "virtual_value": {
+      "type": "integer"
+    },
+    "date": {
+      "type": "datetime"
+    },
+    "artMedia": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::creator.creator",
+      "inversedBy": "purchase_records"
+    },
+    "LicenceToken": {
+      "type": "blocks"
+    }
+  }
+}
